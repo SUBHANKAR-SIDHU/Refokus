@@ -45,7 +45,7 @@ function Works() {
                 <h1 className='text-[35vw] font-medium leading-none'>work</h1>
                 <div className='absolute top-0 w-full h-full'>
                     {imageData.map((elem,index)=>(
-                        elem.isActive && (<img className='w-60 absolute translate-x-[-50%] translate-y-[-50%]' style={{top: elem.top ,left: elem.left}} src={elem.url} alt="" />)
+                        elem.isActive && (<img key={index} className='w-60 absolute translate-x-[-50%] translate-y-[-50%]' style={{top: elem.top ,left: elem.left}} src={elem.url} alt="" />)
                     ))}
                 </div>
             </div>
