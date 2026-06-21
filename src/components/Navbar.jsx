@@ -4,7 +4,7 @@ import Button from './Button'
 function Navbar() {
     return (
         <div className='max-w-4xl mx-auto'>
-            <nav className='flex gap-30 py-4 justify-between items-center text-sm font-extralight'>
+            <nav className='flex gap-30 py-3 justify-between items-center text-sm font-extralight'>
                 <div className='flex gap-16 '>
                     <img src="https://assets-global.website-files.com/6334198f239547d0f9cd84b3/63349803431f1562dccf1802_refokus%20logo.svg" alt="" />
                     <div className='flex gap-10  '>
