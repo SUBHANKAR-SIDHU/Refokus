@@ -10,7 +10,7 @@ function App() {
     <div className='w-full text-white  bg-zinc-900'>
       <Navbar/>
       <Works/>
-      <Stripss/>
+      <Strips/>
       <Products/>
       <Marquees/>
     </div>
