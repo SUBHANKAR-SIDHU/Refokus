@@ -28,11 +28,11 @@ function Marquees() {
         ],
     ]
     return (
-        <div className='py-10 mt-20 overflow-hidden'>
+        <div className='py-10 mt-10 w-full relative '>
             {imagesData.map((elem, idx) => (
-                <Marquee key={idx} data={elem}/>
+                <Marquee key={idx} data={elem} diraction={idx === 0 ? "left" : "right"} />
             ))}
-        </div>      
+        </div>
     )
 }
 
