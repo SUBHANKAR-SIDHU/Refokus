@@ -11,13 +11,13 @@ function Footer() {
                     <div className='basis-1/3'>
                         <h4 className='mb-10 text-zinc-300'>Socials</h4>
                         {["Instagram", "Twitter (X?)", "LinkedIn"].map((item, idx) => (
-                            <a href="#" className='block text-sm text-zinc-400 mt-2'>{item}</a>
+                            <a href="#" key={idx} className='block text-sm text-zinc-400 mt-2'>{item}</a>
                         ))}
                     </div>
                     <div className='basis-1/3'>
                         <h4 className='mb-10 text-zinc-300'>Sitemap</h4>
                         {["home", "work", "careers","contact"].map((item, idx) => (
-                            <a href="#" className='block text-sm capitalize text-zinc-400 mt-2'>{item}</a>
+                            <a href="#" key={idx} className='block text-sm capitalize text-zinc-400 mt-2'>{item}</a>
                         ))}
                     </div>
                     <div className='basis-1/2 flex flex-col items-end justify-end'>
