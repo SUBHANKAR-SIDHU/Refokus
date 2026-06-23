@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { motion, useMotionValueEvent, useScroll } from "motion/react"
 
 function Works() {
-    const imageData = [
+    const [imageData, setImageData] = useState([
         {
             url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef09178195ce0073e38f3_Refokus%20Tools-1.png",
             top: "50%",
             left: "50%",
-            isActive: true,
+            isActive: false,
         },
         {
             url: "https://assets-global.website-files.com/6334198f239547d0f9cd84b3/634ef0accfe1b3e66bc55462_Refokus%20Tools.png",
@@ -38,14 +39,47 @@ function Works() {
             left: "55%",
             isActive: false,
         }
-    ]
+    ])
+    const { scrollYProgress } = useScroll()
+    scrollYProgress.on("change", (data) => {
+        function showImage(arr){
+            setImageData((prev)=>(
+                prev.map((item,idx)=>
+                    arr.indexOf(idx) === -1 ? {...item,isActive:false} : {...item,isActive:true}
+                )
+            ))
+        }
+        switch (Math.floor(data * 100)) {
+            case 0:
+                showImage([]);
+                break;
+            case 2:
+                showImage([0]);
+                break;
+            case 3:
+                showImage([0,1]);
+                break;
+            case 5:
+                showImage([0,1,2]);
+                break;
+            case 7:
+                showImage([0,1,2,3]);
+                break;
+            case 8:
+                showImage([0,1,2,3,4,5]);
+                break;
+            case 9:
+                showImage([0,1,2,3,4,5,6]);
+                break;
+        }
+    })
     return (
         <div className='w-full'>
             <div className='text-white max-w-4xl mx-auto text-center relative '>
                 <h1 className='text-[35vw] font-medium leading-none'>work</h1>
                 <div className='absolute top-0 w-full h-full'>
-                    {imageData.map((elem,index)=>(
-                        elem.isActive && (<img key={index} className='w-60 absolute translate-x-[-50%] translate-y-[-50%]' style={{top: elem.top ,left: elem.left}} src={elem.url} alt="" />)
+                    {imageData.map((elem, index) => (
+                        elem.isActive && (<img key={index} className='w-56 absolute translate-x-[-50%] translate-y-[-50%]' style={{ top: elem.top, left: elem.left }} src={elem.url} alt="" />)
                     ))}
                 </div>
             </div>
