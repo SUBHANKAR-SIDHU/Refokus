@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from './Button'
 
 function Product({ data, count, mover }) {
-    const colors = ['#FDE68A', '#BFDBFE', '#C7F9CC', '#FBCFE8'];
+    const colors = ['#443199', '#792CA2', '#C13383', '#E05454'];
     const [bg, setBg] = useState(null);
 
     const handleMouseEnter = () => {
