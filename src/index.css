@@ -3,3 +3,53 @@
 *{
     font-family: Satoshi Variable;
 }
+
+.btn__label {
+    align-items: center;
+    display: inline-grid;
+    justify-items: center;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.btn {
+    align-items: center;
+    border-radius: 1.875rem;
+    transition: scale .3s cubic-bezier(.22, .61, .36, 1);
+    will-change: transform
+}
+
+.btn__alt,
+.btn__main {
+    grid-area: 1/1;
+    transition: transform .45s cubic-bezier(.22, .61, .36, 1);
+    white-space: nowrap;
+}
+
+.btn__main {
+    transform: translateY(0)
+}
+
+.btn__alt {
+    transform: translateY(120%)
+}
+
+
+.menu__btn {
+    padding-bottom: .75rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    padding-top: .75rem
+}
+
+.btn:hover {
+    scale: 1.1;
+}
+
+.btn:hover .btn__main {
+    transform: translateY(-120%);
+}
+
+.btn:hover .btn__alt {
+    transform: translateY(0);
+}
