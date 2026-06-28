@@ -1,12 +1,20 @@
 import React from 'react'
 import { PiArrowBendDownRightThin } from "react-icons/pi";
 
-function Button({title="Start a Project"}) {
+function Button({ title = "Start a Project" }) {
     return (
-        <div className='max-w-33.75 flex justify-between items-center gap-2 rounded-full h-9 text-black bg-zinc-200 '>
-            <h1 className='ml-2' >{title}</h1>
-            <span className='mt-0.5 mr-1'><PiArrowBendDownRightThin/></span>
-        </div>
+        <button class="menu__btn btn max-w-36 flex  text-black bg-zinc-200 ">
+            <div class="btn__label  ">
+                <div class="btn__main flex">
+                    <h1>{title}</h1>
+                    <h1 className='ml-1'><PiArrowBendDownRightThin /></h1>
+                </div>
+                <div class="btn__alt flex">
+                    <h1>{title}</h1>
+                    <h1 className='ml-1'><PiArrowBendDownRightThin /></h1>
+                </div>
+            </div>
+        </button>
     )
 }
 
